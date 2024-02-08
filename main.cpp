@@ -70,11 +70,30 @@ T findBiggest(T i, T j, T k){
 
 
 
-
+// void test(int &i, int &j) {
+//     i++;
+// }
 
 
 
 int main(){
+    // int r,
+    // int s;
+    // test(r,s);
+    //skapa en SWAP-metod skicka a och b och när man kommer tillbaka är värdena flyttade 
+    // int v1 =12;
+    // int v2 = 13;
+    // swap<int>(v1,v2);
+    // std::cout << v1 << v2 << std::endl; // 13, 12
+    // float v1 =12;
+    // float v2 = 13;
+    // swap<float>(v1,v2);
+    // std::cout << v1 << v2 << std::endl; // 13, 12
+    
+
+
+    // MyClass<int> 
+    // MyClass<float> 
     int i = 11;
     int j = 12;
     int k = 13;
