@@ -1,5 +1,6 @@
 PROG=programmet.exe
-SOURCES=main.cpp
+SOURCES=main.cpp coolfunctions.cpp
+#SOURCES=*.cpp
 DEPS=
 CC=g++
 CFLAGS=-Wall  -std=c++20

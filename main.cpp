@@ -3,6 +3,10 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include "coolfunctions.h"
+
+
+
 
 // DATASTRUKTURER = hur kan man skapa DS som funkar med "vad som helst" int, HockeyPlayer
 // ALGORITMER - hur kan man återanvända en algoritm med "vad som helst" int, float, string
@@ -82,7 +86,11 @@ class Player{
 public:    
     std::string Name;
     int Age;
+
 };
+
+
+
 
 
 //template<class T,int N>
@@ -138,7 +146,13 @@ T findSmallest(std::vector<T> arrayen){
     // returnera
     // TEMPLATED
 }
-int main(){
+int main(){    
+    int s = test(23,18); 
+    // push 23 (4 bytes)
+    // push 18 (4 bytes)
+    // jmp in i funktionen()
+    // ta pull 4 st bytes -> s
+
     std::vector<int> arr = {
         12,12,45543,234,3,342
     };
