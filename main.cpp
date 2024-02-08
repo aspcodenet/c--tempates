@@ -77,13 +77,7 @@ void swap(T &i, T &j) {
 }
 
 
-//EXERCISE 2:
-//Skriv en funktion som hittar MINSTA värdet i en array !
-int findSmallest(std::vector<int> arrayen){
-    //loopa och ta frtam minsta
-    // returnera
-    // TEMPLATED
-}
+
 class Player{
 public:    
     std::string Name;
@@ -129,8 +123,34 @@ private:
 };
 
 
-
+//EXERCISE 2:
+//Skriv en funktion som hittar MINSTA värdet i en array !
+template<typename T>
+T findSmallest(std::vector<T> arrayen){
+    T smallest = arrayen[0];
+    for(int i = 0; i < arrayen.size();i++ ){
+        if(arrayen[i] < smallest ){ // STEFAN SKA PRATA
+            smallest = arrayen[i];
+        }
+    }
+    return smallest;
+    //loopa och ta frtam minsta
+    // returnera
+    // TEMPLATED
+}
 int main(){
+    std::vector<int> arr = {
+        12,12,45543,234,3,342
+    };
+    int smallest = findSmallest(arr);
+
+
+    std::vector<float> arr2 = {
+        12.3f,12.342f,45543.342f,234.1f,3.0f,342.1223f
+    };
+    auto smallest2 = findSmallest(arr2);
+
+
     // static
     //std::vctor<int> INTE på embedded
     // aldrig malloc/free på embedded - 
