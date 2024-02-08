@@ -69,14 +69,56 @@ T findBiggest(T i, T j, T k){
 // }
 
 
+template <typename T>
+void swap(T &i, T &j) {
+    T temp = i;
+    i = j;
+    j  = temp;  
+}
 
-// void test(int &i, int &j) {
-//     i++;
-// }
+
+//template<class T,int N>
+template<typename T,int N>
+class MyArray{
+public:   
+    void Sort(){
+
+    }
+private:
+    T things[N]; 
+};
 
 
+class Player{
+public:    
+    std::string Name;
+    int Age;
+};
 
 int main(){
+    // static
+    //std::vctor<int> INTE på embedded
+    // aldrig malloc/free på embedded - 
+    // STACKALLOKERADE DATASTRUKTURER
+    MyArray<Player,100> team; //10
+
+    MyArray<int,10> array; //10
+    MyArray<int,20> arrayPlayers; //20
+    MyArray<float,10> array2; //
+
+
+    int tal1 = 12;
+    int tal2 = 13;
+    swap<int>(tal1,tal2);
+    std::cout << "Tal1:" <<  tal1 << " Tal2:" <<tal2 << std::endl;
+
+    float tal1f = 12.11f;
+    float tal2f = 13.11f;
+    swap<float>(tal1f,tal2f);
+    std::cout << "Tal1:" <<  tal1f << " Tal2:" <<tal2f << std::endl;
+
+
+
     // int r,
     // int s;
     // test(r,s);
