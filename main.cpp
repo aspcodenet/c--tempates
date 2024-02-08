@@ -84,36 +84,81 @@ int findSmallest(std::vector<int> arrayen){
     // returnera
     // TEMPLATED
 }
-
-
-//template<class T,int N>
-template<typename T,int N>
-class MyArray{
-public:   
-    void Sort(){
-
-    }
-private:
-    T things[N]; 
-};
-
-
 class Player{
 public:    
     std::string Name;
     int Age;
 };
 
+
+//template<class T,int N>
+template<typename T,int N>
+class MyArray{
+public: 
+    MyArray(){
+        antal = 0;
+    }
+    void add(T one){
+        // om antalet > max 
+        // return "ERROR - finns inte plats för mer"
+        // 
+        things[antal] = one;
+        antal++;
+    }
+
+    // void removeAt(int index){
+    //     // foppa    kalle   stefan   lisa   anna   
+    //     //  0        1          2       3    4         antal = 5
+    //     // foppa    stefan     lisa    anna            antal = 4
+    //  }
+
+
+
+
+    int size(){
+        return antal;
+    }
+    T getAt(int index){
+        return things[index];
+    }
+
+
+private:
+    int antal;
+    T things[N]; 
+};
+
+
+
 int main(){
     // static
     //std::vctor<int> INTE på embedded
     // aldrig malloc/free på embedded - 
     // STACKALLOKERADE DATASTRUKTURER
-    MyArray<Player,100> team; //10
+    Player foppa;
+    foppa.Age = 52;
+    foppa.Name = "Peter";
 
-    MyArray<int,10> array; //10
-    MyArray<int,20> arrayPlayers; //20
-    MyArray<float,10> array2; //
+    MyArray<Player,1> team; 
+    team.add(foppa);
+
+    Player mats;
+    mats.Age = 53;
+    mats.Name = "Mats";
+    team.add(mats);
+
+    for(int i = 0; i < team.size(); i++){
+        Player p = team.getAt(i);
+        std::cout << p.Name << std::endl;
+    }
+
+    //team.removeAt(0);
+
+
+
+    // MyArray<int,10> array; //10
+    // MyArray<int,20> arrayPlayers; //20
+    // MyArray<float,10> array2; //
 
 
     int tal1 = 12;
