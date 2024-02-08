@@ -77,6 +77,15 @@ void swap(T &i, T &j) {
 }
 
 
+//EXERCISE 2:
+//Skriv en funktion som hittar MINSTA värdet i en array !
+int findSmallest(std::vector<int> arrayen){
+    //loopa och ta frtam minsta
+    // returnera
+    // TEMPLATED
+}
+
+
 //template<class T,int N>
 template<typename T,int N>
 class MyArray{
