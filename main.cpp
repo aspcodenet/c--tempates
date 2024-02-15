@@ -6,6 +6,8 @@
 #include "coolfunctions.h"
 
 
+// DEFINE = preprocessorn - FATTAR INTE C/C++ ren TEXT
+
 
 
 // DATASTRUKTURER = hur kan man skapa DS som funkar med "vad som helst" int, HockeyPlayer
@@ -92,7 +94,8 @@ public:
 
 
 
-
+// std::vector<>
+// STL - standard template library
 //template<class T,int N>
 template<typename T,int N>
 class MyArray{
@@ -127,7 +130,7 @@ public:
 
 private:
     int antal;
-    T things[N]; 
+    T things[N]; // KAN INTE VÄXA/KRYMPA .- statisk i storlek  , INTE static
 };
 
 

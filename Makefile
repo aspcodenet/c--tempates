@@ -1,5 +1,5 @@
 PROG=programmet.exe
-SOURCES=main.cpp coolfunctions.cpp
+SOURCES=main3.cpp 
 #SOURCES=*.cpp
 DEPS=
 CC=g++
