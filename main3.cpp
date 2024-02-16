@@ -2,28 +2,13 @@
 #include <vector>
 #include <string>
 #include <chrono>
+#include "student.h"
 
 // 1. Header-filer osv CPP
 // 2. Datum time_t vs c++20  date  using namespace std::chrono; + using namespace date;
 // 3. sortera på datum ...
 // 4. GIT !!!
 
-
-class Student{
-public:
-    Student(std::string namn, std::string ort):
-        namn(namn), ort(ort)
-    {
-
-    }
-    std::string getName(){return namn;};
-    std::string getOrt(){return ort;};
-private:    
-    std::string namn;
-    //float balance;
-    std::string ort;
-    
-};
 
 
 // TID SNABBARE

@@ -1,5 +1,5 @@
 PROG=programmet.exe
-SOURCES=main3.cpp 
+SOURCES=main3.cpp student.cpp
 #SOURCES=*.cpp
 DEPS=
 CC=g++
