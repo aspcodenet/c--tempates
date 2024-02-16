@@ -7,12 +7,24 @@
 // 1. Header-filer osv CPP
 // 2. Datum time_t vs c++20  date  using namespace std::chrono; + using namespace date;
 // 3. sortera på datum ...
-// 4. GIT !!!
+// 4. Enum
+// 5. GIT !!!
 
 // TID SNABBARE
 // ORDO fortfarande SAMMA
 
-void bubbleSort(std::vector<Student> &students)
+// PlayerPosition
+// Goalie, Defence, Forward, Center, MidFielder
+// målis
+
+// int -2 -> +2 milj
+
+typedef enum{ // uppräkning av ok värden
+    Ascending,
+    Descending 
+} SORTING_ORDER;
+
+void bubbleSort(std::vector<Student> &students, SORTING_ORDER sortOrder)
 {
     int antalSwappar = 0;
     int antalVarv = 0;
@@ -27,12 +39,23 @@ void bubbleSort(std::vector<Student> &students)
                 std::cout << s.getName() << std::endl;
             }
             // innan dess en if sats liksom!
-            if (students[i].getName() > students[i + 1].getName())
-            {
-                antalSwappar++;
-                Student temp = students[i];
-                students[i] = students[i + 1];
-                students[i + 1] = temp;
+            // VI ÄNDRAR BARA DENNA RAD
+            if(sortOrder == Ascending){
+                if (students[i].getBirthDate() < students[i + 1].getBirthDate())
+                {
+                    antalSwappar++;
+                    Student temp = students[i];
+                    students[i] = students[i + 1];
+                    students[i + 1] = temp;
+                }
+            }else{
+                if (students[i].getBirthDate() > students[i + 1].getBirthDate())
+                {
+                    antalSwappar++;
+                    Student temp = students[i];
+                    students[i] = students[i + 1];
+                    students[i + 1] = temp;
+                }
             }
         }
         antalVarv++;
@@ -100,13 +123,15 @@ int main()
 
     std::vector<Student> students;
     students.push_back(Student("Stefan", "Stockholm", toTime(1972,8,3)));
-    students.push_back(Student("Anna", "Stockholm", toTime(1972,11,4)));
+    students.push_back(Student("Anna", "Stockholm", toTime(1970,11,4)));
     students.push_back(Student("Oliver", "Nacka", toTime(2008,5,28)));
 
     students[0].printDate();
-
-    // bubbleSort(students);
-    selectionSort(students);
+    //std::cout << "Hur vill du sortera?" ;
+    //std::string sortOrder = "asc";
+    //std::cin >> sortOrder;
+    bubbleSort(students, Descending);
+    //selectionSort(students);
     for (auto s : students)
     {
         std::cout << s.getName() << std::endl;
