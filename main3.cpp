@@ -76,6 +76,14 @@ void selectionSort(std::vector<Student> &students)
     }
 }
 
+time_t toTime(int year, int mon, int day ){
+    struct tm tn{};
+    tn.tm_year = year-1900;
+    tn.tm_mon = mon-1;
+    tn.tm_mday = day;
+    return mktime(&tn);
+}
+
 int main()
 {
     // using namespace std::chrono;
@@ -91,11 +99,9 @@ int main()
     //struct tm *mytime = localtime(&now);
 
     std::vector<Student> students;
-    students.push_back(Student("Stefan", "Stockholm", now));
-    students.push_back(Student("Anna", "Stockholm", now));
-    students.push_back(Student("Oliver", "Nacka", now));
-    students.push_back(Student("Josefine", "Nacka", now));
-    students.push_back(Student("Fanny", "Nacka", now));
+    students.push_back(Student("Stefan", "Stockholm", toTime(1972,8,3)));
+    students.push_back(Student("Anna", "Stockholm", toTime(1972,11,4)));
+    students.push_back(Student("Oliver", "Nacka", toTime(2008,5,28)));
 
     students[0].printDate();
 
